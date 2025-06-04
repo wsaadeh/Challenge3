@@ -12,7 +12,7 @@ public class Client {
     private Long id;
 
     private String name;
-    private Double cpf;
+    private String cpf;
     private Double income;
     private LocalDate birthDate;
     private Integer children;
@@ -20,7 +20,7 @@ public class Client {
     public Client() {
     }
 
-    public Client(Long id, String name, Double cpf, Double income, LocalDate birthDate, Integer children) {
+    public Client(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
@@ -45,11 +45,11 @@ public class Client {
         this.name = name;
     }
 
-    public Double getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Double cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

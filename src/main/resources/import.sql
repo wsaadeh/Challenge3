@@ -1,0 +1,10 @@
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values ('Nelio Alves','12365478921',2000.0,'1980-01-10',2);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values ('Maria Silva','32165478955',2500.0,'1985-10-16',0);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values ('Bob Green','42165478966',5000.0,'1978-07-09',1);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values ('Alex Brown','62166478976',6500.0,'1954-09-07',7);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values ('Joao Mendes','82166478976',8500.0,'1995-11-10',2);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values ('Zeca Pascal','22166478976',10000.0,'2000-09-01',3);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values ('Delphin Neto','12166479979',5500.0,'1975-03-15',0);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values ('Arlindo Cobol','72166479979',4500.0,'1998-04-01',0);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values ('Clipper Medeiros','52166470980',50500.0,'1964-05-01',5);
+INSERT INTO tb_client (name,cpf,income,birth_date,children) values ('Wilson Java','82167470940',50500.0,'1979-06-18',2);
