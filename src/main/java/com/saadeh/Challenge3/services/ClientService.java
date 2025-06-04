@@ -3,6 +3,8 @@ package com.saadeh.Challenge3.services;
 import com.saadeh.Challenge3.dto.ClientDTO;
 import com.saadeh.Challenge3.entities.Client;
 import com.saadeh.Challenge3.repositories.ClientRepository;
+import com.saadeh.Challenge3.services.exceptions.ClientException;
+import com.saadeh.Challenge3.services.exceptions.DatabaseException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -20,7 +22,7 @@ public class ClientService {
 
     @Transactional(readOnly = true)
     public ClientDTO findById(Long id){
-        Client client = clientRepository.findById(id).orElseThrow(()-> new RuntimeException("Resource not found."));
+        Client client = clientRepository.findById(id).orElseThrow(()-> new ClientException("Client not found."));
         return new ClientDTO(client);
     }
 
@@ -47,19 +49,19 @@ public class ClientService {
             client = clientRepository.save(client);
             return new ClientDTO(client);
         }catch (EntityNotFoundException e){
-            throw new RuntimeException("Recurso não encontrado.");
+            throw new ClientException("Client not found.");
         }
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
     public void delete(Long id){
         if (!clientRepository.existsById(id)){
-            throw new RuntimeException("Recurso não encontrado.");
+            throw new ClientException("Client not found.");
         }
         try {
             clientRepository.deleteById(id);
         }catch (DataIntegrityViolationException e){
-            throw new RuntimeException("Falha de integridade referencial.");
+            throw new DatabaseException("Data integrity violation.");
         }
     }
 
